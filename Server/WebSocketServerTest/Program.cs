@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace WebSocketServer
+namespace WebSocketServerTest
 {
     public class Program
     {
