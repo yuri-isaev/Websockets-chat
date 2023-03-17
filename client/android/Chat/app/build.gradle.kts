@@ -6,7 +6,7 @@ plugins {
 
 android {
 	namespace = "com.isaev.chat"
-	compileSdk = 33
+	compileSdk = 34
 
 	defaultConfig {
 		applicationId = "com.isaev.chat"
@@ -38,15 +38,27 @@ android {
 }
 
 dependencies {
-  // standart libs
-	implementation("androidx.core:core-ktx:1.9.0")
+  // Standart libs
+	implementation("androidx.core:core-ktx:1.13.1")
 	implementation("androidx.appcompat:appcompat:1.7.0")
-	implementation("com.google.android.material:material:1.12.0")
 	implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+	implementation("androidx.legacy:legacy-support-v4:1.0.0")
+	implementation("com.google.android.material:material:1.12.0")
+
+  // Lifecycle libs
+	implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.1")
+	implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+
+	// Test libs
 	testImplementation("junit:junit:4.13.2")
 	androidTestImplementation("androidx.test.ext:junit:1.1.5")
 	androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
 	// REST API libs
 	implementation ("com.squareup.retrofit2:retrofit:2.9.0")
 	implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+	// Navigation fragments libs
+	implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+	implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 }

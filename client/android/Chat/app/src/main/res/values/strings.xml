@@ -6,4 +6,7 @@
     <string name="enter_name">Enter name</string>
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="login">Login</string>
 </resources>

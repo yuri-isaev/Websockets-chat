@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="login">Login</string>
+</resources>

@@ -1,7 +1,7 @@
 package com.isaev.chat.domain.models
 
 data class RegisterRequest(
-  val name: String,
+  val userName: String,
   val phone: String,
   val password: String
 )

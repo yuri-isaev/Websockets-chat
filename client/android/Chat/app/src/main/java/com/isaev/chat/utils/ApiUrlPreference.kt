@@ -9,10 +9,10 @@ class ApiUrlPreference {
 
   fun getUrl(context: Context): String {
     val preference: SharedPreferences = context.getSharedPreferences(this.fileName, Context.MODE_PRIVATE)
-    return preference.getString(key, "http://192.168.8.100:3000").toString()
+    return preference.getString(key, "http://192.168.0.104:5206/api/Auth/").toString()
   }
 
-  fun setUrl(context: Context, apiUrl: String) {
+  fun setUrl(context: Context, apiUrl: String): Unit {
     val preference: SharedPreferences = context.getSharedPreferences(this.fileName, Context.MODE_PRIVATE)
     preference.edit().putString(key, apiUrl).apply()
   }
