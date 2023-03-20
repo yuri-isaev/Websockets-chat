@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.*
 import androidx.fragment.app.*
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.isaev.chat.R
 import com.isaev.chat.utils.*
 
@@ -14,7 +15,8 @@ class RegisterFragment : Fragment() {
   private lateinit var name: EditText
   private lateinit var phone: EditText
   private lateinit var password: EditText
-  private lateinit var register: Button
+  private lateinit var btnRegister: Button
+  private lateinit var layoutLogin: RelativeLayout
   private lateinit var apiUrlPreference: ApiUrlPreference
   private val registerViewModel: RegisterViewModel by viewModels()
 
@@ -29,10 +31,15 @@ class RegisterFragment : Fragment() {
     name = view.findViewById(R.id.etName)
     phone = view.findViewById(R.id.etPhone)
     password = view.findViewById(R.id.etPassword)
-    register = view.findViewById(R.id.btnRegister)
+    btnRegister = view.findViewById(R.id.btnRegister)
+    layoutLogin = view.findViewById(R.id.layoutLogin)
 
-    register.setOnClickListener {
-      register.isEnabled = false
+    layoutLogin.setOnClickListener {
+      findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+    }
+
+    btnRegister.setOnClickListener {
+      btnRegister.isEnabled = false
       registerViewModel.registerUser(
         requireContext(),
         name.text.toString(),
@@ -43,7 +50,7 @@ class RegisterFragment : Fragment() {
     }
 
     registerViewModel.registerResult.observe(viewLifecycleOwner, Observer { response ->
-      register.isEnabled = true
+      btnRegister.isEnabled = true
       if (response.status == "success") {
         Toaster.showAlert(requireContext(), "Registered", response.message)
       } else {
@@ -52,7 +59,7 @@ class RegisterFragment : Fragment() {
     })
 
     registerViewModel.error.observe(viewLifecycleOwner, Observer { errorMessage ->
-      register.isEnabled = true
+      btnRegister.isEnabled = true
       Log.e("Log", "error = $errorMessage")
       Toaster.showAlert(requireContext(), "Error", errorMessage)
     })

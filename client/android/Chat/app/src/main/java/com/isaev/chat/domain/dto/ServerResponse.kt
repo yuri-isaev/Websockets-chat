@@ -1,4 +1,4 @@
-package com.isaev.chat.domain.models
+package com.isaev.chat.domain.dto
 
 class ServerResponse {
   lateinit var status: String

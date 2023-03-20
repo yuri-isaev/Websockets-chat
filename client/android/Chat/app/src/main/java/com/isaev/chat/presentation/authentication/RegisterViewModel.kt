@@ -3,7 +3,7 @@ package com.isaev.chat.presentation.authentication
 import android.content.Context
 import androidx.lifecycle.*
 import com.isaev.chat.domain.contracts.ApiService
-import com.isaev.chat.domain.models.*
+import com.isaev.chat.domain.dto.*
 import com.isaev.chat.domain.providers.RetrofitClient
 import com.isaev.chat.utils.ApiUrlPreference
 import retrofit2.Call
@@ -13,9 +13,9 @@ import retrofit2.Response
 class RegisterViewModel : ViewModel() {
 
   private val _registerResult = MutableLiveData<ServerResponse>()
-  val registerResult: LiveData<ServerResponse> get() = _registerResult
-
   private val _error = MutableLiveData<String>()
+
+  val registerResult: LiveData<ServerResponse> get() = _registerResult
   val error: LiveData<String> get() = _error
 
   fun registerUser(ctx: Context, name: String, phone: String, password: String, preferences: ApiUrlPreference) {

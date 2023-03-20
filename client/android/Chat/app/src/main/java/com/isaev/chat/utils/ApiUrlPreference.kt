@@ -16,4 +16,14 @@ class ApiUrlPreference {
     val preference: SharedPreferences = context.getSharedPreferences(this.fileName, Context.MODE_PRIVATE)
     preference.edit().putString(key, apiUrl).apply()
   }
+
+  fun getAccessToken(context: Context): String {
+    val preference: SharedPreferences = context.getSharedPreferences(this.fileName, Context.MODE_PRIVATE)
+    return preference.getString("accessToken", "").toString()
+  }
+
+  fun setAccessToken(context: Context, token: String): Unit {
+    val preference: SharedPreferences = context.getSharedPreferences(this.fileName, Context.MODE_PRIVATE)
+    preference.edit().putString("accessToken", token).apply()
+  }
 }
