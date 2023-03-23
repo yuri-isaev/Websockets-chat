@@ -6,8 +6,7 @@ import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
 
-interface ApiService {
-
+interface AuthService {
   @POST("Registration")
   fun registerUser(@Body request: RegisterRequest): Call<ServerResponse>
 

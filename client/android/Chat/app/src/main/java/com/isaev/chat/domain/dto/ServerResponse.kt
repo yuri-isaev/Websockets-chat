@@ -1,6 +1,6 @@
 package com.isaev.chat.domain.dto
 
-class ServerResponse {
+class ServerResponse(s: String) {
   lateinit var status: String
   lateinit var message: String
 }
