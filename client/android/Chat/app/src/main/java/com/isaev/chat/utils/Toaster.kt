@@ -5,7 +5,6 @@ import android.content.Context
 import com.isaev.chat.R
 
 object Toaster {
-
   fun showAlert(
     context: Context,
     title: String = "",
@@ -19,5 +18,12 @@ object Toaster {
     alertDialog.setPositiveButton(R.string.dialog_yes) { _, _ -> onYes?.run() }
     alertDialog.setNegativeButton(R.string.dialog_no) { _, _ -> onNo?.run() }
     alertDialog.show()
+  }
+}
+
+// Wrapper class
+class ToasterWrapper {
+  fun showAlert(context: Context, title: String, message: String) {
+    Toaster.showAlert(context, title, message)
   }
 }

@@ -15,7 +15,7 @@ class RegisterFragment : Fragment() {
   private lateinit var name: EditText
   private lateinit var phone: EditText
   private lateinit var password: EditText
-  private lateinit var btnRegister: Button
+  lateinit var btnRegister: Button
   private lateinit var layoutLogin: RelativeLayout
   private lateinit var apiUrlPreference: ApiUrlPreference
   private val registerViewModel: RegisterViewModel by viewModels()

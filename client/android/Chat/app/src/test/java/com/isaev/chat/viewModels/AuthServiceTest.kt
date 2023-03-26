@@ -1,4 +1,4 @@
-package com.isaev.chat
+package com.isaev.chat.viewModel
 
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule

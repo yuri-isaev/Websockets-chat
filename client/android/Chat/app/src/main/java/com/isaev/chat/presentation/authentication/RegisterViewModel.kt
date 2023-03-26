@@ -16,7 +16,6 @@ class RegisterViewModel(private val authService: AuthService) : ViewModel() {
   fun registerUser(ctx: Context, userName: String, phone: String, password: String, preference: ApiUrlPreferenceService) {
     val credentials = RegisterRequest(userName, phone, password)
 
-    //region POST request - test
     authService.registerUser(credentials).enqueue(object : Callback<ServerResponse> {
       override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
         if (response.isSuccessful) {
@@ -25,10 +24,10 @@ class RegisterViewModel(private val authService: AuthService) : ViewModel() {
           error.value = "Failed to register"
         }
       }
+
       override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
         error.value = "Network error: ${t.message}"
       }
     })
-    //endregion
   }
 }
