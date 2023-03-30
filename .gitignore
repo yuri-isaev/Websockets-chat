@@ -1,3 +1,4 @@
 .idea/
 
-/rust/web/target/
+/web/target/
+/future/target/
