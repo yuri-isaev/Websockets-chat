@@ -1,0 +1,15 @@
+[package]
+name = "toki"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+log = "0.4.14"
+#simple_loger = "4.0.0"
+
+[dependencies.simple_logger]
+default-features = false
+features = ["colors"]
