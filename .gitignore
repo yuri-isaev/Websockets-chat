@@ -1,5 +1,5 @@
 .idea/
 
-/web/target/
-/future/target/
-/toki/target/
+/rust/web/target/
+/rust/future/target/
+/rust/toki/target/
